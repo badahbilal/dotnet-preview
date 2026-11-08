@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مدونة دوت نت | Baddah</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --title: #f0f6fc;
+      --accent: #58a6ff;
+      --tag-bg: #21262d;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+    .container { max-width: 850px; margin: 0 auto; }
+    header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+    header h1 { color: var(--title); font-size: 2rem; margin-bottom: 8px; }
+    header p { color: #8b949e; }
+    .nav-filters { display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap; }
+    .filter-btn {
+      background: var(--tag-bg);
+      color: var(--accent);
+      border: 1px solid var(--border);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      text-decoration: none;
+    }
+    .articles-list { display: flex; flex-direction: column; gap: 24px; }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: var(--accent); }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 0.85rem;
+    }
+    .category {
+      background: rgba(88, 166, 255, 0.15);
+      color: var(--accent);
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .date { color: #8b949e; }
+    .card h2 {
+      color: var(--title);
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    .card p { color: var(--text); margin-bottom: 16px; font-size: 0.95rem; }
+    .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .tag {
+      color: #8b949e;
+      background: var(--tag-bg);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>سجل مقالات .NET للمحترفين</h1>
+      <p>مدونة تقنية متخصصة في الأداء العالي والبنى التحتية البرمجية المعقدة.</p>
+      <div class="nav-filters">
+        <span style="color:#8b949e; font-size:0.85rem; align-self:center;">الأقسام:</span>
+        <a href="#performance" class="filter-btn"># الأداء وقواعد البيانات</a>
+        <a href="#concurrency" class="filter-btn"># الأنظمة المتزامنة</a>
+        <a href="#architecture" class="filter-btn"># البنية البرمجية</a>
+      </div>
+    </header>
+
+    <main class="articles-list">
+      <!-- Section 1 -->
+      <article class="card" id="performance">
+        <div class="card-meta">
+          <span class="category">قواعد البيانات والأداء</span>
+          <span class="date">6 نوفمبر 2026</span>
+        </div>
+        <h2>تحسين استعلامات EF Core: خفض زمن الاستجابة بنسبة 70%</h2>
+        <p>تحليل عملي لمشكلة N+1، وكيفية استخدام AsSplitQuery مع استعلامات التتبع المخصصة AsNoTracking لتقليل استهلاك الذاكرة في أنظمة الإنتاج الضخمة.</p>
+        <div class="tags">
+          <span class="tag">#EFCore</span>
+          <span class="tag">#SQLServer</span>
+          <span class="tag">#Performance</span>
+        </div>
+      </article>
+
+      <!-- Section 2 -->
+      <article class="card" id="concurrency">
+        <div class="card-meta">
+          <span class="category">الأنظمة الموزعة والمتزامنة</span>
+          <span class="date">4 نوفمبر 2026</span>
+        </div>
+        <h2>معالجة Race Conditions في .NET عبر Distributed Locks</h2>
+        <p>كيف تحمي العمليات الحساسة في تطبيقات الدفع وحجز التذاكر باستخدام Optimistic Concurrency وأقفال Redis الموزعة عبر عدة خوادم متوازية.</p>
+        <div class="tags">
+          <span class="tag">#Redis</span>
+          <span class="tag">#Concurrency</span>
+          <span class="tag">#HighAvailability</span>
+        </div>
+      </article>
+
+      <!-- Section 3 -->
+      <article class="card" id="architecture">
+        <div class="card-meta">
+          <span class="category">العمارة البرمجية</span>
+          <span class="date">1 نوفمبر 2026</span>
+        </div>
+        <h2>Clean Architecture بدون تعقيد: متى نستخدم CQRS؟</h2>
+        <p>دليل عملي لتنظيم المشاريع بين طبقات Domain و Application دون إغراق الفريق في عشرات الطبقات والمشاريع غير الضرورية مع اختبارات Testcontainers.</p>
+        <div class="tags">
+          <span class="tag">#CleanArchitecture</span>
+          <span class="tag">#CQRS</span>
+          <span class="tag">#Testing</span>
+        </div>
+      </article>
+    </main>
+  </div>
+</body>
+</html>
